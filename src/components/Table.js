@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { DataGrid } from '@mui/x-data-grid';
 import { Button } from '@mui/material';
 import Modal from "./Modal.js";
+import { getData } from '../client/client.js'; // Adjust the import path as necessary
 
 
 const DataTable = ({ data }) => {
