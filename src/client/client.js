@@ -1,7 +1,7 @@
 import axios from 'axios';
 
 const apiClient = axios.create({
-  baseURL: 'https://api.example.com', // Replace with your API base URL
+  baseURL: 'https://arpit-test-001.azurewebsites.net/', // Replace with your API base URL
 });
 
 export const getData = async (endpoint, headers = {}) => {

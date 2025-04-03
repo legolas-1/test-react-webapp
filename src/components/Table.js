@@ -7,6 +7,7 @@ import Modal from "./Modal.js";
 const DataTable = ({ data }) => {
   const [showModal, setShowModal] = useState(false);
   const [selectedId, setSelectedId] = useState(null);
+  const [response, setResponse] = useState(null);
 
   const columns = [
     { field: 'id', headerName: 'ID', width: 90 },
@@ -31,6 +32,9 @@ const DataTable = ({ data }) => {
     console.log(`Button clicked for row with id: ${id}`);
     setSelectedId(id);
     setShowModal(true);
+
+    const resp = getData('api/HttpExample?name=ArpitIsHere');
+    setResponse(resp);
   };
 
   const handleCloseModal = () => {
@@ -51,6 +55,7 @@ const DataTable = ({ data }) => {
         renderCell
       />
       <Modal show={showModal} onClose={handleCloseModal} id={selectedId} />
+      <div>{response}</div>
     </div>
   );
 };
