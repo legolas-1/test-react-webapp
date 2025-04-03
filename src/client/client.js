@@ -16,7 +16,12 @@ export const getData = async (endpoint, headers = {}) => {
 
 export const postData = async (endpoint, data, headers = {}) => {
   try {
-    const response = await apiClient.post(endpoint, data, { headers });
+    const updatedHeaders = {
+      ...headers,
+      'Content-Type': 'application/json'
+    };
+    
+    const response = await apiClient.post(endpoint, data, { headers: updatedHeaders });
     return response.data;
   } catch (error) {
     console.error('Error posting data:', error);

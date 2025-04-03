@@ -2,13 +2,14 @@ import React, { useState } from 'react';
 import { DataGrid } from '@mui/x-data-grid';
 import { Button } from '@mui/material';
 import Modal from "./Modal.js";
-import { getData } from '../client/client.js'; // Adjust the import path as necessary
+import { getData, postData } from '../client/client.js'; // Adjust the import path as necessary
 
 
 const DataTable = ({ data }) => {
   const [showModal, setShowModal] = useState(false);
   const [selectedId, setSelectedId] = useState(null);
   const [response, setResponse] = useState(null);
+  const [response1, setResponse1] = useState(null);
 
   const columns = [
     { field: 'id', headerName: 'ID', width: 90 },
@@ -36,6 +37,9 @@ const DataTable = ({ data }) => {
 
     const resp = getData('api/HttpExample?name=ArpitIsHere');
     setResponse(resp);
+
+    const resp1 = postData('api/HttpExample', "some-data");
+    setResponse1(resp1);
   };
 
   const handleCloseModal = () => {
@@ -56,7 +60,10 @@ const DataTable = ({ data }) => {
         renderCell
       />
       <Modal show={showModal} onClose={handleCloseModal} id={selectedId} />
-      <div>{response}</div>
+      <div>GET: {response}</div>
+      <br>
+      </br>
+      <div>POST: {response1}</div>
     </div>
   );
 };
