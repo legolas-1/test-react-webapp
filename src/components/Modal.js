@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React from 'react';
 import './Modal.css'; // Make sure to create a CSS file for the modal styles
 
 const Modal = ({ show, onClose, id }) => {
