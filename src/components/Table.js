@@ -3,6 +3,7 @@ import { DataGrid } from '@mui/x-data-grid';
 import { Button } from '@mui/material';
 import Modal from "./Modal.js";
 import { getData, postData } from '../client/client.js'; // Adjust the import path as necessary
+import { getDataTS } from '../client/tsclient.js'; // Adjust the import path as necessary
 
 
 const DataTable = ({ data }) => {
