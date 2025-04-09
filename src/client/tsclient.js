@@ -1,7 +1,7 @@
 import axios from 'axios';
 
 const apiClient = axios.create({
-  baseURL: 'https://aad.targetingservice.ppe.services.microsoft.com/api/FunctionalGroups/StaticAudiences/Audiences/joschweidebug', // Replace with your API base URL
+  baseURL: 'https://aad.targetingservice.services.ppe.microsoft.com/api/FunctionalGroups/StaticAudiences/Audiences/joschweidebug', // Replace with your API base URL
 });
 
 export const getDataTS = async (endpoint, headers = {}) => {
