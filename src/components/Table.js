@@ -10,6 +10,7 @@ const DataTable = ({ data }) => {
   const [selectedId, setSelectedId] = useState(null);
   const [response, setResponse] = useState(null);
   const [response1, setResponse1] = useState(null);
+  const [response2, setResponse2] = useState(null);
 
   const columns = [
     { field: 'id', headerName: 'ID', width: 90 },
@@ -29,7 +30,6 @@ const DataTable = ({ data }) => {
   },
   ];
 
-
   const handleButtonClick = (id) => {
     console.log(`Button clicked for row with id: ${id}`);
     setSelectedId(id);
@@ -40,7 +40,16 @@ const DataTable = ({ data }) => {
 
     const resp1 = postData('api/HttpExample', "some-data");
     setResponse1(resp1);
+
+    getDataTS().then((data) => {
+      console.log("data:", data);
+      setResponse2(data);
+    }
+    ).catch((error) => {
+      console.error("Error fetching data TS:", error);
+    });
   };
+
 
   const handleCloseModal = () => {
     setShowModal(false);
@@ -64,6 +73,9 @@ const DataTable = ({ data }) => {
       <br>
       </br>
       <div>POST: {response1}</div>
+      <br>
+      </br>
+      <div>POST-TS: {response2}</div>
     </div>
   );
 };
