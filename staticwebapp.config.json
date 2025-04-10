@@ -1,0 +1,1 @@
+{"routes":[],"auth":{"rolesSource":"/api/getroles","identityProviders":{"azureActiveDirectory":{"registration":{"openIdIssuer":"https://login.microsoftonline.com/a9fc395e-8226-4aa5-95a3-80b754b8c06a","clientIdSettingName":"AZURE_CLIENT_ID","clientSecretSettingName":"AZURE_CLIENT_SECRET_APP_SETTING_NAME"}}}}}
